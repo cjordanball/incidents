@@ -16,7 +16,6 @@ export const fetchNearbyStation = async (lat, lon) => {
 	};
 	try {
 		const response = await axios.request(options);
-		console.log(response.data);
 		return response.data.data[0];
 	} catch (err) {
 		console.error('ERROR: ', err);
