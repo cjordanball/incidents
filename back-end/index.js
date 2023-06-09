@@ -1,4 +1,5 @@
 import express from 'express';
+import 'dotenv/config';
 import { getData } from './helpers/getData.js';
 import { fetchNearbyStation } from './helpers/stationFetch.js';
 import { fetchWeather } from './helpers/weatherFetch.js';
@@ -20,9 +21,7 @@ const killInterval = setInterval(async () => {
 	const { dateString, timeOffset } = dateFormatter(
 		incident.description.event_opened
 	);
-	console.log('offset: ', timeOffset);
 	const weather = await fetchWeather(station.id, dateString, dateString);
-	console.log('weather: ', weather[timeOffset]);
 	const weatherObj = {
 		temperature: weather[timeOffset].temp
 			? `${(parseInt(weather[timeOffset].temp, 10) * 9) / 5 + 32}`
@@ -40,7 +39,6 @@ const killInterval = setInterval(async () => {
 }, 2000);
 
 app.get('/data', async (req, res) => {
-	console.log(totalData);
 	res.send(JSON.stringify(totalData));
 });
 
