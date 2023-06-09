@@ -1,0 +1,16 @@
+{
+	"name": "back-end",
+	"version": "1.0.0",
+	"description": "a back-end server that will access json data and return with weather update",
+	"scripts": {
+		"test": "echo \"Error: no test specified\" && exit 1",
+		"start": "node index.js"
+	},
+	"type": "module",
+	"main": "index.js",
+	"author": "CJB",
+	"license": "MIT",
+	"dependencies": {
+		"express": "^4.18.2"
+	}
+}
