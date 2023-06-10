@@ -1,13 +1,13 @@
 import { useEffect, useState } from 'react';
 import { fetchData } from './helpers';
 import styles from './app.module.css';
-import { Map } from './components';
+import { Map, ListComponent } from './components';
 
 const App = () => {
 	const [data, setData] = useState<any>();
+	const [hotId, setHotId] = useState<string>();
 
 	const getData = async () => {
-		console.log('GETTING DATA');
 		const data = await fetchData('https://localhost:3300/data');
 		setData(data);
 	};
@@ -15,19 +15,34 @@ const App = () => {
 	useEffect(() => {
 		getData();
 	}, []);
-	console.log('DATA: ', data);
-	return data ? (
+
+	const hotIncident = data?.data.find((incident: any) => {
+		return hotId
+			? incident.description.event_id === hotId
+			: incident.description.event_id === data?.data[0].description.event_id;
+	});
+
+	return hotIncident ? (
 		<div className={styles.container}>
 			<div className={styles.mapRegion}>
 				<Map
 					location={{
-						lat: data?.data[0].address.latitude,
-						lng: data?.data[0].address.longitude,
+						lat: hotIncident.address.latitude,
+						lng: hotIncident.address.longitude,
 					}}
-					zoomLevel={10}
+					text={hotIncident.description.event_id}
+					zoomLevel={11}
 				/>
 			</div>
-			<div className={styles.listRegion}>Oh, no</div>
+			<div className={styles.listRegion}>
+				<ListComponent
+					chooseIncident={(e) => {
+						setHotId(e);
+					}}
+					selectedIncident={hotId}
+					incidentData={data}
+				/>
+			</div>
 		</div>
 	) : null;
 };
