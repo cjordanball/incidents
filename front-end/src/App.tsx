@@ -8,7 +8,7 @@ const App = () => {
 	const [hotId, setHotId] = useState<string>();
 
 	const getData = async () => {
-		const data = await fetchData('https://localhost:3300/data');
+		const data = await fetchData('http://127.0.0.1:3300/data');
 		setData(data);
 	};
 
