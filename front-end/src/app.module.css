@@ -1,0 +1,21 @@
+.container {
+	width: 100%;
+	max-width: 1200px;
+	display: flex;
+	flex-direction: row;
+	align-items: center;
+	justify-content: center;
+	height: 100vh;
+}
+
+.mapRegion {
+	flex: 1;
+	height: 100%;
+}
+
+.listRegion {
+	max-width: 300px;
+	flex: 1;
+	height: 100%;
+	background-color: pink;
+}

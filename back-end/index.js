@@ -1,4 +1,5 @@
 import express from 'express';
+import cors from 'cors';
 import 'dotenv/config';
 import { getData } from './helpers/getData.js';
 import { fetchNearbyStation } from './helpers/stationFetch.js';
@@ -7,6 +8,7 @@ import { dateFormatter } from './helpers/dateFormatter.js';
 import { conditions } from './helpers/weatherCodes.js';
 
 const app = express();
+app.use(cors());
 const port = 3300;
 const incidentData = await getData();
 const totalData = [];
@@ -38,8 +40,16 @@ const killInterval = setInterval(async () => {
 	counter++;
 }, 2000);
 
+// const serverOptions = {
+// 	setHeaders: function (res, path, stat) {
+// 		res.set('Access-Control-Allow-Origin', '*');
+// 	},
+// };
+
+// app.use(express.static('public', serverOptions));
+
 app.get('/data', async (req, res) => {
-	res.send(JSON.stringify(totalData));
+	res.json({ data: totalData });
 });
 
 app.listen(port, () => {
