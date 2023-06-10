@@ -1,0 +1,9 @@
+.pin {
+	background-color: transparent;
+	color: red;
+	font-size: 2rem;
+}
+
+.container {
+	background-color: '#555';
+}
