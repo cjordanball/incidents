@@ -1,6 +1,7 @@
 import React from 'react';
 import styles from './listComp.module.css';
 import { ListItem } from '../../components';
+import { dateFormat } from '../../helpers';
 
 interface ListComponentProps {
 	incidentData: any;
@@ -19,6 +20,7 @@ const ListComponent = ({
 				key={incident.description.event_id}
 				compData={{
 					id: incident.description.event_id,
+					date: dateFormat(incident.description.event_opened),
 					city: incident.address.city,
 					state: incident.address.state,
 					apparatusNumber: incident.apparatus.length,

@@ -40,14 +40,6 @@ const killInterval = setInterval(async () => {
 	counter++;
 }, 2000);
 
-// const serverOptions = {
-// 	setHeaders: function (res, path, stat) {
-// 		res.set('Access-Control-Allow-Origin', '*');
-// 	},
-// };
-
-// app.use(express.static('public', serverOptions));
-
 app.get('/data', async (req, res) => {
 	res.json({ data: totalData });
 });

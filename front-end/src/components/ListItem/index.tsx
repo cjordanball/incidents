@@ -4,6 +4,7 @@ import styles from './listItem.module.css';
 interface ListItemProps {
 	compData: {
 		id: string;
+		date: string;
 		city: string;
 		state: string;
 		apparatusNumber: string;
@@ -29,6 +30,7 @@ const ListItem = ({ compData, chooseIncident, isSelected }: ListItemProps) => {
 			}}
 		>
 			<span>{`Incident No. - ${compData.id}`}</span>
+			<span>{`Date - ${compData.date}`}</span>
 			<span>{`Location - ${compData.city}, ${compData.state}`}</span>
 			<span>{`Responder - ${compData.deptName}`}</span>
 			<span>{`Vehicles Responding - ${compData.apparatusNumber}`}</span>
