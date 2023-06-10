@@ -5,9 +5,16 @@
 	display: flex;
 	flex-direction: column;
 	align-items: center;
+	padding-top: 1rem;
 }
 
 .headline {
 	font-size: 1.5rem;
 	font-weight: bold;
+	margin-bottom: 1rem;
+}
+
+.list {
+	flex: 1;
+	overflow: scroll;
 }
