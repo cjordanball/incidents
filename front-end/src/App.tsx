@@ -1,7 +1,7 @@
 import { useEffect, useState } from 'react';
 import { fetchData } from './helpers';
 import styles from './app.module.css';
-import { Map, ListComponent } from './components';
+import { MapContainer, ListComponent } from './components';
 
 const App = () => {
 	const [data, setData] = useState<any>();
@@ -25,13 +25,18 @@ const App = () => {
 	return hotIncident ? (
 		<div className={styles.container}>
 			<div className={styles.mapRegion}>
-				<Map
-					location={{
-						lat: hotIncident.address.latitude,
-						lng: hotIncident.address.longitude,
-					}}
-					text={hotIncident.description.event_id}
-					zoomLevel={11}
+				<MapContainer
+					pinLocation={
+						hotId
+							? {
+									name: hotIncident?.description.event_id,
+									location: {
+										lat: hotIncident?.address.latitude,
+										lng: hotIncident?.address.longitude,
+									},
+							  }
+							: undefined
+					}
 				/>
 			</div>
 			<div className={styles.listRegion}>
