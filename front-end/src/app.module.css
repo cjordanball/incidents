@@ -12,6 +12,7 @@
 .mapRegion {
 	flex: 1;
 	height: 100%;
+	margin-right: 1rem;
 }
 
 .listRegion {
