@@ -12,7 +12,12 @@ const getData = async () => {
 	} catch (error) {
 		console.error(error);
 	}
-	return allFiles;
+	return allFiles.sort((incident1, incident2) =>
+		new Date(incident1.description.event_opened) >
+		new Date(incident2.description.event_opened)
+			? 1
+			: -1
+	);
 };
 
 export { getData };
