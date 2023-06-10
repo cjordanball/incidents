@@ -6,6 +6,9 @@ The intended result is that, upon loading, no items in the list will be selected
 
 ## Installation
 1. In each separate directory (i.e., front-end and back-end), run yarn install to install the necessary dependencies.
-2. In the back-end/data directory, place the JSON files for the incident reports as desired.
-3. In the terminal, go to the root level of the back-end directory and run *yarn run start*, which should set up the server. You should see the log message "listening at http://localhost:3300" in the terminal.
-4. Open a separate terminal tab, navigate to the root level of the front-end directory, and run *yarn run start*, then open a browswer tab (if it doesn't open automatically) to "localhost:3000". The Incident Report page should appear. 
+2. In the back-end directory, at the root level, create an ".env" file with the following contents: METEOSTAT_API_KEY=b504586bbfmshe38fb1705e4f33ap1bf324jsn0801aeb59dda
+3. In the front-end directory, at the root level, create an ".env" file with the following contents: REACT_APP_MAP_API_KEY=AIzaSyDZvi1WUSm9b8-uai7u2O2MK1B5sUBjzfI
+4. These keys will be discontinued in the near future, but please keep the repo private just to keep these keys safe.
+5. In the back-end/data directory, place the JSON files for the incident reports as desired.
+6. In the terminal, go to the root level of the back-end directory and run *yarn run start*, which should set up the server. You should see the log message "listening at http://localhost:3300" in the terminal.
+7. Open a separate terminal tab, navigate to the root level of the front-end directory, and run *yarn run start*, then open a browswer tab (if it doesn't open automatically) to "localhost:3000". The Incident Report page should appear. 
