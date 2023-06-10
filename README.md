@@ -19,3 +19,7 @@ The intended result is that, upon loading, no items in the list will be selected
 <img width="1743" alt="Screenshot 2023-06-10 at 7 07 15 AM" src="https://github.com/cjordanball/incidents/assets/8020911/926b9249-d661-45b1-9ad6-15dab11d3006">
 <img width="1743" alt="Screenshot 2023-06-10 at 7 07 33 AM" src="https://github.com/cjordanball/incidents/assets/8020911/b8626706-621f-4eea-987f-e3f420ce2c76">
 <img width="1742" alt="Screenshot 2023-06-10 at 7 07 51 AM" src="https://github.com/cjordanball/incidents/assets/8020911/d9b4a217-d1f2-4872-bb43-21015cf39efd">
+
+## Addendum
+
+Please disregard the note contained above regarding the display of the Google map.  After writing that note I was able to replace the map with a better dependency and it works niw as intended.
