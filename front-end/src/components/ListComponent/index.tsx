@@ -37,7 +37,7 @@ const ListComponent = ({
 	return (
 		<div className={styles.container}>
 			<span className={styles.headline}>Incidents</span>
-			{incidentArr}
+			<div className={styles.list}>{incidentArr}</div>
 		</div>
 	);
 };
